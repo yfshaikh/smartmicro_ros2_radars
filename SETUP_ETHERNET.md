@@ -40,8 +40,10 @@ ping 192.168.11.11
 
 The driver is configured via `umrr_ros2_driver/param/radar.params.template.yaml`. It has already been updated for your setup:
 
-- **Adapter:** `enp3s0`, port `55555`, `hw_dev_id: 1`
-- **Sensor:** `192.168.11.11`, port `55555`, `dev_id: 1`, `id: 100`
+- **Adapter:** `enp3s0`, port `55555`, `hw_dev_id: 2`
+- **Sensor:** `192.168.11.11`, port `55555`, `dev_id: 2`, `id: 100`
+
+> **Important:** `hw_dev_id` and `dev_id` must both be set to the same value and must **not** be `1` — the driver treats `1` as the unconfigured default and will throw an error if it sees that value.
 - **Model:** `umrr9f_v2_4_1` (firmware V2.4.0)
 
 If your sensor has a different firmware version, update `model` and the `uif*` fields accordingly:

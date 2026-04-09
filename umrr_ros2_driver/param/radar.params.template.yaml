@@ -5,7 +5,7 @@
     adapters:
       adapter_0:
         hw_type: "eth"
-        hw_dev_id: 1
+        hw_dev_id: 2
         hw_iface_name: "enp3s0"
         port: 55555
     sensors:
@@ -26,7 +26,7 @@
         #   V2.2.0 -> umrr9f_v2_2_1 (uifmajorv: 2, uifminorv: 2, uifpatchv: 1)
         #   V2.0.1 -> umrr9f_v2_1_1 (uifmajorv: 2, uifminorv: 1, uifpatchv: 1)
         model: "umrr9f_v2_4_1"
-        dev_id: 1
+        dev_id: 2
         id: 100
         ip: "192.168.11.11"
         port: 55555
