@@ -4,10 +4,20 @@ This guide covers setting up the smartmicro ROS 2 driver for a single DRVEGRD 16
 
 ## Prerequisites
 
-Install the required ROS 2 dependency:
+`point_cloud_msg_wrapper` is not available as a binary apt package for Humble — it must be built from source inside your ROS 2 workspace.
+
+Clone it into your workspace `src` directory:
 
 ```bash
-sudo apt install ros-humble-point-cloud-msg-wrapper
+cd ~/your_ros2_ws/src
+git clone https://gitlab.com/ApexAI/point_cloud_msg_wrapper.git
+```
+
+Then resolve its dependencies:
+
+```bash
+cd ~/your_ros2_ws
+rosdep install --from-paths src --ignore-src -r -y
 ```
 
 ## Step 1 — Configure the host network interface
@@ -57,7 +67,7 @@ This must be done once before building:
 
 ```bash
 source /opt/ros/humble/setup.bash
-colcon build --packages-select umrr_ros2_driver umrr_ros2_msgs
+colcon build --packages-select point_cloud_msg_wrapper umrr_ros2_driver umrr_ros2_msgs
 source install/setup.bash
 ```
 
